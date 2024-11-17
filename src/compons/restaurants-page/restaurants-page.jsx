@@ -1,18 +1,13 @@
 import { restaurants } from "../../mock";
-import {Reviews} from "../../compons/reviews/reviews";
-import { Menu} from "../../compons/menu/menu";
+import { Restaurant } from "../restaurant/restaurant";
 
-export const RestaurantsPage=({props})=>{
+export const RestaurantsPage=()=>{
     return(
         <div>
-        <h1>Restaurants 6</h1>
-        { restaurants.map(({name, id, menu, reviews}) =>(
-          <div key={id}>
-          <h2>{name}</h2>
-          <Menu menu={menu}/>
-          <Reviews reviews={reviews}/>
-          </div>
-    ) ) }
+        <h1>Restaurants 10</h1>
+        { restaurants.map((restaurant) =>(
+            <Restaurant restaurant = {restaurant} key={restaurant.id}></Restaurant>
+         ) ) }
 
         </div>
     );

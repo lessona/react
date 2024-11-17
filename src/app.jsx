@@ -1,4 +1,10 @@
+import { Layout } from "./compons/layout/layout"
 import { RestaurantsPage } from "./compons/restaurants-page/restaurants-page"
 export const App =()=>{
-    return <RestaurantsPage></RestaurantsPage>
+    return (
+        <Layout sidebar={<div>sidebar</div>}>
+            <RestaurantsPage/>
+        </Layout>
+
+    ) 
 }
