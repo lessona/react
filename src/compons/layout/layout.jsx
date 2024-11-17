@@ -1,10 +1,14 @@
-export const Layout = ({children, sidebar}) =>{
-    return (
-        <div>
-        <header>Restaurants header</header>
-        {sidebar}
-        {children}
-        <footer>Restaurants footer</footer>
-        </div>
-    )
-}
+export const Layout = ({ children, sidebar }) => {
+  return (
+    <div>
+      <header style={{ color: "pink", background: "black" }}>
+        Restaurants header
+      </header>
+      <div style={{ color: "orange", background: "brown" }}>{sidebar}</div>
+      {children}
+      <footer style={{ color: "yellow", background: "black" }}>
+        Restaurants footer
+      </footer>
+    </div>
+  );
+};

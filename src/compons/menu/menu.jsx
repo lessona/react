@@ -1,14 +1,12 @@
-export const Menu=({menu})=>{
-    return(
+export const Menu = ({ menu }) => {
+  return (
     <div>
-    <h3>menu</h3>
-          <ul>
-          {
-              menu.map(({name}) => (
-                  <li key={name}>{name}</li>
-              ))
-          }
-          </ul>
+      <h3>menu</h3>
+      <ul>
+        {menu.map(({ name }) => (
+          <li key={name}>{name}</li>
+        ))}
+      </ul>
     </div>
-    )
-}
+  );
+};
