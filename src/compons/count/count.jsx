@@ -1,19 +1,13 @@
-import { useState } from "react";
-export const Count = () => {
-  const [value, setvalue] = useState(0);
+import { useCount } from "./use-count";
 
-  const increase = () => {
-    value < 5 && setvalue(value + 1);
-  };
-  const decrease = () => {
-    value > 0 && setvalue(value - 1);
-  };
+export const Counter = () => {
+  const { value, increment, decrement } = useCount();
+
   return (
     <div>
-      <button onClick={increase}>+</button>
+      <button onClick={increment}>+</button>
       {value}
-
-      <button onClick={decrease}>-</button>
+      <button onClick={decrement}>-</button>
     </div>
   );
 };

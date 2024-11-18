@@ -1,14 +1,13 @@
+import { Footer } from "../footer/footer";
+import { Header } from "../header/header";
+
 export const Layout = ({ children, sidebar }) => {
   return (
     <div>
-      <header style={{ color: "pink", background: "black" }}>
-        Restaurants header
-      </header>
+      <Header />
       <div style={{ color: "orange", background: "brown" }}>{sidebar}</div>
       {children}
-      <footer style={{ color: "yellow", background: "black" }}>
-        Restaurants footer
-      </footer>
+      <Footer />
     </div>
   );
 };
