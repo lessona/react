@@ -1,5 +1,6 @@
 import { Count } from "../count/count";
 import { Menu } from "../menu/menu";
+import { ReviewForm } from "../review-form/review-form";
 import { Reviews } from "../reviews/reviews";
 
 export const Restaurant = ({ restaurant }) => {
@@ -12,6 +13,7 @@ export const Restaurant = ({ restaurant }) => {
       <h2>{name}</h2>
       {Boolean(menu.length) && <Menu menu={menu} />}
       {Boolean(reviews.length) && <Reviews reviews={reviews} />}
+      <ReviewForm />
       <Count />
     </div>
   );
