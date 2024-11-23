@@ -5,6 +5,7 @@ import { ProgressBar } from "../progress-bar/progress-bar";
 export const Layout = ({ children, sidebar }) => {
   return (
     <div>
+      <ProgressBar />
       <Header />
       <div style={{ color: "orange", background: "brown" }}>{sidebar}</div>
       {children}

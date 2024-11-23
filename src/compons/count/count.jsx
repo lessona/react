@@ -1,32 +1,4 @@
-import { useEffect } from "react";
-import { useCount } from "./use-count";
-
-export const Count = () => {
-  const { value, increment, decrement } = useCount();
-
-  useEffect(() => {
-    // effect
-    console.log(`effect - ${value}`);
-
-    // cleanup function
-    return () => {
-      console.log(`cleanup - ${value}`);
-    };
-  }, [value]);
-
-  useEffect(() => {
-    console.log("only mount");
-  }, []);
-
-  useEffect(() => {
-    const callback = () => console.log("scroll");
-    window.addEventListener("scroll", callback);
-
-    return () => {
-      window.removeEventListener("scroll", callback);
-    };
-  }, []);
-
+export const Count = ({ value, increment, decrement }) => {
   return (
     <div>
       <button onClick={increment}>+</button>

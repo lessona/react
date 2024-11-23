@@ -41,6 +41,46 @@ export const RestaurantsPage = () => {
           reviews={activeRestaurant.reviews}
         />
       )}
+
+      {/* {activeRestaurant && (
+        <Restaurant
+          restaurant={activeRestaurant}
+          key={activeRestaurant.id}
+          name={activeRestaurant.name}
+          menu={activeRestaurant.menu}
+          reviews={activeRestaurant.reviews}
+        />
+      )}
+
+      {activeRestaurant && (
+        <Restaurant
+          restaurant={activeRestaurant}
+          key={activeRestaurant.id}
+          name={activeRestaurant.name}
+          menu={activeRestaurant.menu}
+          reviews={activeRestaurant.reviews}
+        />
+      )}
+
+      {activeRestaurant && (
+        <Restaurant
+          restaurant={activeRestaurant}
+          key={activeRestaurant.id}
+          name={activeRestaurant.name}
+          menu={activeRestaurant.menu}
+          reviews={activeRestaurant.reviews}
+        />
+      )}
+
+      {activeRestaurant && (
+        <Restaurant
+          restaurant={activeRestaurant}
+          key={activeRestaurant.id}
+          name={activeRestaurant.name}
+          menu={activeRestaurant.menu}
+          reviews={activeRestaurant.reviews}
+        />
+      )} */}
     </div>
   );
 };
