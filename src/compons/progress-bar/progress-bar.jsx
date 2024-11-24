@@ -5,8 +5,6 @@ import classNames from "classnames";
 export const ProgressBar = ({ viewVariant = "default" }) => {
   const progress = useProgress();
 
-  console.log(styles);
-
   return (
     <div
       className={classNames(styles.progressBar, {
