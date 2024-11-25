@@ -1,9 +1,9 @@
 import { Review } from "../review/review";
-
+import { Text } from "../text/text";
 export const Reviews = ({ reviews }) => {
   return (
     <div>
-      <h3>reviews</h3>
+      <Text type={3}>Reviews</Text>
       <ul style={{ color: "red", background: "lightblue" }}>
         {reviews?.map(({ text, id }) => (
           <li key={id}>

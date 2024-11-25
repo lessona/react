@@ -1,5 +1,8 @@
 import { Count } from "../count/count";
 import { useForm } from "./use-form";
+import { Button } from "../button/button";
+import { Text } from "../text/text";
+import styles from "./review-form.module.css";
 export const ReviewForm = () => {
   const {
     form,
@@ -15,10 +18,9 @@ export const ReviewForm = () => {
 
   return (
     <form onSubmit={(e) => e.preventDefault()}>
-      <h3>Review Form</h3>
-
-      <div>
-        <span>Name</span>
+      <Text type={3}>Review Form</Text>
+      <div className={styles.fields}>
+        <span className={styles.label}>Name</span>
         <input
           type="text"
           value={name}
@@ -26,8 +28,8 @@ export const ReviewForm = () => {
         />
       </div>
 
-      <div>
-        <span>Text</span>
+      <div className={styles.fields}>
+        <span className={styles.label}>Text</span>
         <input
           type="text"
           value={text}
@@ -35,22 +37,23 @@ export const ReviewForm = () => {
         />
       </div>
 
-      <div>
-        <span>Address</span>
+      <div className={styles.fields}>
+        <span className={styles.label}>Address</span>
         <input
           type="text"
           value={address}
           onChange={(event) => setAddress(event.target.value)}
         />
       </div>
-
-      <Count
-        value={rating}
-        decrement={decrementRating}
-        increment={incrementRating}
-      />
-
-      <button onClick={clear}>clear</button>
+      <div className={styles.rating}>
+        <Text>Rating:</Text>
+        <Count
+          value={rating}
+          decrement={decrementRating}
+          increment={incrementRating}
+        />
+      </div>
+      <Button onClick={clear}>Clear</Button>
     </form>
   );
 };
