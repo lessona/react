@@ -2,7 +2,8 @@ import { useState } from "react";
 import { restaurants } from "../../mock";
 import { Restaurant } from "../restaurant/restaurant";
 import { Tab } from "../tab/tab";
-
+import { Text } from "../text/text";
+import styles from "./restaurant-page.module.css";
 export const RestaurantsPage = () => {
   const [activeRestaurantId, setActiveRestaurantId] = useState(
     restaurants[0].id
@@ -21,8 +22,8 @@ export const RestaurantsPage = () => {
   };
   return (
     <div>
-      <h1 style={{ color: "brown", background: "lightyellow" }}>Restaurants</h1>
-
+      <h1 className={styles.headline}>Restaurants</h1>
+      <Text type={1}>Restaurant</Text>
       {restaurants.map((restaurant) => (
         <Tab
           key={restaurant.id}

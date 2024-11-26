@@ -1,7 +1,4 @@
+import styles from "./header.module.css";
 export const Header = () => {
-  return (
-    <header style={{ color: "pink", background: "black" }}>
-      Restaurants header
-    </header>
-  );
+  return <header className={styles.header}>Restaurants header</header>;
 };

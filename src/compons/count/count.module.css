@@ -1,0 +1,8 @@
+.count {
+  display: flex;
+  align-items: left;
+  gap: 20px;
+  color: blueviolet;
+  background-color: aquamarine;
+  font-size: medium;
+}

@@ -1,13 +1,13 @@
 import { Footer } from "../footer/footer";
 import { Header } from "../header/header";
 import { ProgressBar } from "../progress-bar/progress-bar";
-
+import styles from "./layout.module.css";
 export const Layout = ({ children, sidebar }) => {
   return (
     <div>
       <ProgressBar />
       <Header />
-      <div style={{ color: "orange", background: "brown" }}>{sidebar}</div>
+      <div className={styles.layout}>{sidebar}</div>
       {children}
       <Footer />
     </div>

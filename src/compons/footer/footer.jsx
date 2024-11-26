@@ -1,7 +1,4 @@
+import styles from "./footer.module.css";
 export const Footer = () => {
-  return (
-    <footer style={{ color: "yellow", background: "black" }}>
-      Restaurants footer
-    </footer>
-  );
+  return <footer className={styles.footer}>Restaurants footer</footer>;
 };
