@@ -23,7 +23,7 @@ export const RestaurantsPage = () => {
   return (
     <div>
       <h1 className={styles.headline}>Restaurants</h1>
-      <Text type={1}>Restaurant</Text>
+      <Text type="h3">Restaurant</Text>
       {restaurants.map((restaurant) => (
         <Tab
           key={restaurant.id}

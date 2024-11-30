@@ -18,7 +18,7 @@ export const ReviewForm = () => {
 
   return (
     <form onSubmit={(e) => e.preventDefault()}>
-      <Text type={3}>Review Form</Text>
+      <Text type="h3">Review Form</Text>
       <div className={styles.fields}>
         <span className={styles.label}>Name</span>
         <input

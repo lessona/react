@@ -1,17 +1,18 @@
 import classNames from "classnames";
 import styles from "./text.module.css";
-
+import React from "react";
+const Tags = {
+  h1: "h1",
+  h2: "h2",
+  h3: "h3",
+};
 export function Text({ type, children }) {
-  if (type === 1) {
-    return <h1 className={classNames("text", styles.h1)}>{children}</h1>;
-  }
-
-  if (type === 2) {
-    return <h2 className={classNames("text", styles.h2)}>{children}</h2>;
-  }
-
-  if (type === 3) {
-    return <h3 className={classNames("text", styles.h3)}>{children}</h3>;
+  if (Tags[type]) {
+    return React.createElement(
+      Tags[type] || Tags.h1,
+      { className: classNames("text", styles.h1) },
+      children
+    );
   }
 
   return <span className={styles.text}>{children}</span>;

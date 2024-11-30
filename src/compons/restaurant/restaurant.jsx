@@ -11,7 +11,7 @@ export const Restaurant = ({ restaurant }) => {
   }
   return (
     <div key={id}>
-      <Text type={2}>{name}</Text>
+      <Text type="h2">{name}</Text>
       {Boolean(menu.length) && <Menu menu={menu} />}
       {reviews.length ? (
         <Reviews reviews={reviews} />
