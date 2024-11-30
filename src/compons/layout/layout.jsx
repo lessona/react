@@ -13,7 +13,7 @@ export const Layout = ({ children, sidebar }) => {
           <ProgressBar viewVariant="colored" />
           <Header />
           {children}
-          {sidebar}
+          <div className={styles.layout}>{sidebar}</div>
           <Footer />
         </div>
       </ThemeContextProvider>
