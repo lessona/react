@@ -1,5 +1,6 @@
 import { useState } from "react";
-import { AuthContext } from ".";
+import { AuthContext } from "./autocontext";
+
 export const AuthContextProvider = ({ children }) => {
   const [auth, setAuth] = useState({ isAuthorized: false });
   const toggleAuth = () => {

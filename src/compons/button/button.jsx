@@ -1,24 +1,24 @@
 import classNames from "classnames";
 import styles from "./button.module.css";
-
-export function Button({
+import { useTheme } from "../theme-context/use-theme";
+export const Button = ({
   children,
-  mode = "primary",
-  size = "small",
   onClick,
-}) {
+  className,
+  viewVariant = "default",
+}) => {
+  const { value } = useTheme();
   return (
     <button
-      type="button"
-      className={classNames(styles.button, {
-        [styles._primary]: mode === "primary",
-        [styles._secondary]: mode === "secondary",
-        [styles._small]: size === "small",
-        [styles._large]: size === "large",
+      className={classNames(styles.root, className, {
+        [styles.default]: viewVariant === "default",
+        [styles.big]: viewVariant === "big",
+        [styles.dark]: value === "dark",
+        [styles.light]: value === "light",
       })}
       onClick={onClick}
     >
       {children}
     </button>
   );
-}
+};

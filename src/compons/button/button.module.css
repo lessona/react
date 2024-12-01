@@ -1,4 +1,4 @@
-.button {
+/* .button {
   background-color: yellowgreen;
 
   &._primary {
@@ -19,4 +19,21 @@
   &._small {
     padding: 6px;
   }
+} */
+.root {
+  padding: 10px;
+}
+.default {
+  font-size: 20px;
+}
+.big {
+  font-size: 30px;
+}
+.dark {
+  background-color: black;
+  color: white;
+}
+.light {
+  background-color: white;
+  color: black;
 }
