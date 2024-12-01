@@ -1,3 +1,4 @@
+import { useAuth } from "../../autocontext/use-auth";
 import { RestaurantCounter } from "../count/restaurant-count";
 import { Menu } from "../menu/menu";
 import { ReviewForm } from "../review-form/review-form";
@@ -5,6 +6,7 @@ import { Reviews } from "../reviews/reviews";
 import { Text } from "../text/text";
 
 export const Restaurant = ({ restaurant }) => {
+  const { auth } = useAuth();
   const { name, id, menu, reviews } = restaurant;
   if (!name) {
     return null;
@@ -18,9 +20,13 @@ export const Restaurant = ({ restaurant }) => {
       ) : (
         <div>empty reviews</div>
       )}
-      <ReviewForm />
+      {auth.isAuthorized && (
+        <>
+          <ReviewForm />
 
-      <RestaurantCounter />
+          <RestaurantCounter />
+        </>
+      )}
     </div>
   );
 };

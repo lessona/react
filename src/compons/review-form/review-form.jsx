@@ -3,7 +3,6 @@ import { useForm } from "./use-form";
 import { Button } from "../button/button";
 import { Text } from "../text/text";
 import styles from "./review-form.module.css";
-import { useEffect, useRef } from "react";
 export const ReviewForm = () => {
   const {
     form,
@@ -17,12 +16,6 @@ export const ReviewForm = () => {
 
   const { name, address, text, rating } = form;
 
-  const nameInputRef = useRef(); // { current: undefined }
-  useEffect(() => {
-    nameInputRef.current.focus();
-    console.log(nameInputRef.current.offsetWidth);
-  }, []);
-
   return (
     <form onSubmit={(e) => e.preventDefault()}>
       <Text type="h3">Review Form</Text>
@@ -32,7 +25,6 @@ export const ReviewForm = () => {
           type="text"
           value={name}
           onChange={(event) => setName(event.target.value)}
-          ref={nameInputRef}
         />
       </div>
 

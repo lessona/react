@@ -3,6 +3,7 @@ import { AuthContext } from "./autocontext";
 
 export const AuthContextProvider = ({ children }) => {
   const [auth, setAuth] = useState({ isAuthorized: false });
+
   const toggleAuth = () => {
     setAuth((prev) => {
       return prev.isAuthorized
@@ -10,6 +11,7 @@ export const AuthContextProvider = ({ children }) => {
         : { isAuthorized: true, name: "User" };
     });
   };
+
   return (
     <AuthContext.Provider value={{ auth, toggleAuth }}>
       {children}
