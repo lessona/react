@@ -9,8 +9,17 @@ const Tags = {
 export function Text({ type, children }) {
   if (Tags[type]) {
     return React.createElement(
-      Tags[type] || Tags.h1,
-      { className: classNames("text", styles.h1) },
+      Tags[type],
+      {
+        className: classNames(
+          "text",
+          Tags[type] === "h1"
+            ? styles.h1
+            : Tags[type] === "h2"
+            ? styles.h2
+            : styles.h3
+        ),
+      },
       children
     );
   }

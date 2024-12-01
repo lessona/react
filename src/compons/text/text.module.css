@@ -6,13 +6,15 @@
 
 .h1 {
   font-size: 24px;
+  color: blueviolet;
 }
 
 .h2 {
   font-size: 20px;
+  color: blue;
 }
 
 .h3 {
   font-size: 16px;
-  color: forestgreen;
+  color: coral;
 }
