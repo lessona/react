@@ -1,15 +1,17 @@
 .progressBar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 10px;
-    
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 10px;
 }
 
 .default {
-    background: red;
+  background: red;
 }
 
 .colored {
-    background: blue;
+  background: blue;
+}
+.light {
+  background: yellow;
 }

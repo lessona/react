@@ -1,22 +1,17 @@
-.button {
-  background-color: yellowgreen;
-
-  &._primary {
-    border: 1px solid blue;
-    color: blue;
-  }
-
-  &._secondary {
-    color: darkmagenta;
-    border-color: forestgreen;
-  }
-
-  &._large {
-    padding: 12px;
-    border-color: aqua;
-  }
-
-  &._small {
-    padding: 6px;
-  }
+.root {
+  padding: 10px;
+}
+.default {
+  font-size: 20px;
+}
+.big {
+  font-size: 30px;
+}
+.dark {
+  background-color: black;
+  color: white;
+}
+.light {
+  background-color: white;
+  color: black;
 }
