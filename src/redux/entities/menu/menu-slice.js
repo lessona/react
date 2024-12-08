@@ -19,4 +19,4 @@ export const menuSlice = createSlice({
   },
 });
 
-export const { selectDishesIds, selectDisheById } = menuSlice.selectors;
+export const { selectDishesIds, selectDishById } = menuSlice.selectors;

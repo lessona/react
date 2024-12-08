@@ -1,10 +1,10 @@
 import { useSelector } from "react-redux";
 
-import { selectDisheById } from "../../redux/entities/menu/menu-slice";
 import { MenuItem } from "./menu-item";
+import { selectDishById } from "../../redux/entities/menu/menu-slice";
 
 export const MenuItemContainer = ({ id }) => {
-  const dish = useSelector((state) => selectDisheById(state, id));
+  const dish = useSelector((state) => selectDishById(state, id));
 
   if (!dish) {
     return null;
@@ -12,5 +12,5 @@ export const MenuItemContainer = ({ id }) => {
 
   const { name, ingredients } = dish;
 
-  return <MenuItem name={name} id={id} ingredients={ingredients} />;
+  return <MenuItem name={name} ingredients={ingredients} />;
 };
