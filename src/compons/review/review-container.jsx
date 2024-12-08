@@ -8,7 +8,7 @@ export const ReviewContainer = ({ id }) => {
   if (!review?.text) {
     return null;
   }
-  const { text, user } = review;
+  const { text, userId } = review;
 
-  return <Review text={text} userId={user} />;
+  return <Review text={text} userId={userId} />;
 };
