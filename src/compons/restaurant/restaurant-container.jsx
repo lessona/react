@@ -9,7 +9,7 @@ export const RestaurantContainer = ({ id }) => {
     return null;
   }
 
-  const { name, reviews, codecs } = restaurant;
+  // const { name, reviews, menu } = restaurant;
 
-  return <Restaurant name={name} reviews={reviews} odecs={codecs} id={id} />;
+  return <Restaurant restaurant={restaurant} />;
 };

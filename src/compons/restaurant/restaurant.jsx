@@ -1,3 +1,4 @@
+import { useSelector } from "react-redux";
 import { useAuth } from "../../autocontext/use-auth";
 import { RestaurantCounter } from "../count/restaurant-count";
 import { Menu } from "../menu/menu";
@@ -7,14 +8,16 @@ import { Text } from "../text/text";
 
 export const Restaurant = ({ restaurant }) => {
   const { auth } = useAuth();
-  const { name, id, menu, reviews } = restaurant;
+  const { name, menu, reviews } = restaurant;
   if (!name) {
     return null;
   }
   return (
-    <div key={id}>
-      <Text type="h2">{name}</Text>
+    <div>
+      <Text type="h2">{name} </Text>
+      <Menu menu={menu} />
       {Boolean(menu.length) && <Menu menu={menu} />}
+
       {reviews.length ? (
         <Reviews reviews={reviews} />
       ) : (

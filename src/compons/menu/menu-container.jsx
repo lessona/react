@@ -1,11 +1,11 @@
 import { useSelector } from "react-redux";
-import { selectMenuById } from "../../redux/entities/menu/menu-slice";
+import { selectDishesIds } from "../../redux/entities/menu/menu-slice";
 import { Menu } from "./menu";
 
 export const MenuContainer = ({ id }) => {
-  const menu = useSelector((state) => selectMenuById(state, id));
+  const menu = useSelector((state) => selectDishesIds(state, id));
 
-  if (!menu?.type) {
+  if (!menu) {
     return null;
   }
 
