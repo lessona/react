@@ -10,7 +10,7 @@ export const MenuItemContainer = ({ id }) => {
     return null;
   }
 
-  const { name, ingredients } = dish;
+  const { name } = dish;
 
-  return <MenuItem name={name} ingredients={ingredients} />;
+  return <MenuItem name={name} />;
 };
