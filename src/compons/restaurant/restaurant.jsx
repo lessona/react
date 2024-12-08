@@ -6,6 +6,7 @@ import { ReviewForm } from "../review-form/review-form";
 import { Reviews } from "../reviews/reviews";
 import { Text } from "../text/text";
 import { MenuContainer } from "../menu/menu-container";
+import { ReviewsContainer } from "../reviews/reviews-container";
 
 export const Restaurant = ({ restaurant }) => {
   const { auth } = useAuth();
@@ -17,13 +18,8 @@ export const Restaurant = ({ restaurant }) => {
     <div>
       <Text type="h2">{name} </Text>
       <MenuContainer restaurantId={restaurant.id} />
-      {Boolean(menu.length) && <Menu menu={menu} />}
+      <ReviewsContainer restaurantId={restaurant.id} />
 
-      {reviews.length ? (
-        <Reviews reviews={reviews} />
-      ) : (
-        <div>empty reviews</div>
-      )}
       {auth.isAuthorized && (
         <>
           <ReviewForm />
