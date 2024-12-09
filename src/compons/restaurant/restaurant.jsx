@@ -21,7 +21,7 @@ export const Restaurant = ({ restaurant }) => {
         <>
           <ReviewForm />
 
-          <RestaurantCounter />
+          <RestaurantCounter id={restaurant.id} />
         </>
       )}
     </div>
