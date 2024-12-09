@@ -1,13 +1,14 @@
-import { MenuItem } from "../menuI-item/menu-item";
+import { MenuItemContainer } from "../menuI-item/menu-item-container";
 import { Text } from "../text/text";
+
 export const Menu = ({ menu }) => {
   return (
     <div>
       <Text type="h3">Menu</Text>
       <ul>
-        {menu?.map(({ name, id }) => (
+        {menu?.map((id) => (
           <li key={id}>
-            <MenuItem name={name} />
+            <MenuItemContainer id={id} />
           </li>
         ))}
       </ul>

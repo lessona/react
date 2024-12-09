@@ -1,16 +1,15 @@
 import { useState } from "react";
-import { restaurants } from "../../mock";
-import { Restaurant } from "../restaurant/restaurant";
-import { Tab } from "../tab/tab";
 import { Text } from "../text/text";
 import styles from "./restaurant-page.module.css";
+import { selectRestaurantsIds } from "../../redux/entities/restaurants/restaurants-slice";
+import { useSelector } from "react-redux";
+import { RestaurantContainer } from "../restaurant/restaurant-container";
+import { RestaurantTabContainer } from "../restaurant-tab/restaurant-tab-container";
 export const RestaurantsPage = () => {
-  const [activeRestaurantId, setActiveRestaurantId] = useState(
-    restaurants[0].id
-  );
+  const restaurantsIds = useSelector(selectRestaurantsIds);
 
-  const activeRestaurant = restaurants.find(
-    ({ id }) => id === activeRestaurantId
+  const [activeRestaurantId, setActiveRestaurantId] = useState(
+    restaurantsIds[0].id
   );
 
   const handleSetActiveRestaurantId = (id) => {
@@ -24,23 +23,17 @@ export const RestaurantsPage = () => {
     <div>
       <h1 className={styles.headline}>Restaurants</h1>
       <Text type="h3">Restaurant</Text>
-      {restaurants.map((restaurant) => (
-        <Tab
-          key={restaurant.id}
-          title={restaurant.name}
-          onClick={() => handleSetActiveRestaurantId(restaurant.id)}
-          isActive={restaurant.id === activeRestaurantId}
+      {restaurantsIds.map((id) => (
+        <RestaurantTabContainer
+          key={id}
+          id={id}
+          onClick={() => handleSetActiveRestaurantId(id)}
+          isActive={id === activeRestaurantId}
         />
       ))}
 
-      {activeRestaurant && (
-        <Restaurant
-          restaurant={activeRestaurant}
-          key={activeRestaurant.id}
-          name={activeRestaurant.name}
-          menu={activeRestaurant.menu}
-          reviews={activeRestaurant.reviews}
-        />
+      {activeRestaurantId && (
+        <RestaurantContainer id={activeRestaurantId} key={activeRestaurantId} />
       )}
     </div>
   );
