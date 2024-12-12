@@ -14,7 +14,7 @@ export const RestaurantTabContainer = ({ id }) => {
 
   return (
     <TabLink
-      title={restaurant.name}
+      title={restaurant.name + "aaa"}
       to={id}
       // id={id}
       //onClick={onClick}
