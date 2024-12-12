@@ -11,5 +11,5 @@ export const MenuContainer = ({ restaurantId }) => {
     return null;
   }
 
-  return Boolean(restaurant.menu.length) && <Menu menu={restaurant.menu} />;
+  return <Menu menu={restaurant.menu} />;
 };

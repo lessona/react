@@ -66,10 +66,6 @@ const router = createBrowserRouter([
             path: ":restaurantId",
             element: <RestaurantPage />,
             children: [
-              {
-                index: true,
-                element: <Navigate to="reviews" replace />,
-              },
               { path: "reviews", element: <RestaurantReviewsPage /> },
               { path: "menu", element: <RestaurantMenuPage /> },
             ],

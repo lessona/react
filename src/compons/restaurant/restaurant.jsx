@@ -4,6 +4,7 @@ import { ReviewForm } from "../review-form/review-form";
 import { Text } from "../text/text";
 import { MenuContainer } from "../menu/menu-container";
 import { ReviewsContainer } from "../reviews/reviews-container";
+import { TabLink } from "../tab-link/tab-link";
 
 export const Restaurant = ({ restaurant }) => {
   const { auth } = useAuth();
@@ -12,9 +13,9 @@ export const Restaurant = ({ restaurant }) => {
     return null;
   }
   return (
-    <div>
+    <section>
       <Text type="h2">{name} </Text>
-      <MenuContainer restaurantId={restaurant.id} />
+      {/* <MenuContainer restaurantId={restaurant.id} />
       <ReviewsContainer restaurantId={restaurant.id} />
 
       {auth.isAuthorized && (
@@ -23,7 +24,10 @@ export const Restaurant = ({ restaurant }) => {
 
           <RestaurantCounter id={restaurant.id} />
         </>
-      )}
-    </div>
+      )} */}
+      {auth.isAuthorized && <RestaurantCounter id={restaurant.id} />}
+      <TabLink to="reviews" title="Reviews" />
+      <TabLink to="menu" title="Menu" />
+    </section>
   );
 };
