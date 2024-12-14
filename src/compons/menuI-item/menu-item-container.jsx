@@ -12,5 +12,5 @@ export const MenuItemContainer = ({ id }) => {
 
   const { name } = dish;
 
-  return <MenuItem name={name} />;
+  return <MenuItem name={name} id={id} />;
 };

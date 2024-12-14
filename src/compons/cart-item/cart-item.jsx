@@ -1,16 +1,16 @@
 import { useSelector } from "react-redux";
-import { RestaurantCounter } from "../count/restaurant-count";
-import { selectRestaurantById } from "../../redux/entities/restaurants/restaurants-slice";
+import { MenuItemContainer } from "../menuI-item/menu-item-container";
+import { selectDishById } from "../../redux/entities/menu/menu-slice";
 
 export const CartItem = ({ id }) => {
-  const restaurant = useSelector((state) => selectRestaurantById(state, id));
-  if (!restaurant.name) {
+  const dish = useSelector((state) => selectDishById(state, id));
+
+  if (!dish) {
     return null;
   }
   return (
     <div>
-      {restaurant.name}
-      <RestaurantCounter id={id} />
+      <MenuItemContainer key={id} id={id} />
     </div>
   );
 };

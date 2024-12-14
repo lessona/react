@@ -6,7 +6,7 @@ import { TabLink } from "../tab-link/tab-link";
 
 export const Restaurant = ({ restaurant }) => {
   const { auth } = useAuth();
-  const { name, id } = restaurant;
+  const { name } = restaurant;
   if (!name) {
     return null;
   }
@@ -14,8 +14,8 @@ export const Restaurant = ({ restaurant }) => {
     <section>
       <Text type="h2">{name} bbb </Text>
       {auth.isAuthorized && <RestaurantCounter id={restaurant.id} />}
-      <TabLink to={`/restaurants/${id}/reviews`} title="Reviews" />
-      <TabLink to={`/restaurants/${id}/menu`} title="Menu" />
+      <TabLink to="reviews" title="Reviews" />
+      <TabLink to="menu" title="Menu" />
     </section>
   );
 };
