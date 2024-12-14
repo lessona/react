@@ -1,5 +1,4 @@
 import { Layout } from "./compons/layout/layout";
-//import { RestaurantsPage } from "./compons/restaurants-page/restaurants-page";
 import "./App.css";
 import { ThemeContextProvider } from "./compons/theme-context/theme-context";
 import { AuthContextProvider } from "./autocontext/auth-context";
@@ -11,7 +10,7 @@ import {
   Navigate,
   RouterProvider,
 } from "react-router-dom";
-//import { RestaurantPage } from "./compons/restaurant-page/restaurant-page";
+
 import { RestaurantMenuPage } from "./compons/pages/restaurant-menu-page";
 import { RestaurantReviewsPage } from "./compons/pages/restaurant-reviews-page";
 import { HomePage } from "./compons/pages/home-page";
