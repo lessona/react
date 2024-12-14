@@ -2,14 +2,6 @@ import { Outlet } from "react-router-dom";
 import { RestaurantsTabsContainer } from "../restaurants-tabs/restaurants-tabs-container";
 import { Text } from "../text/text";
 import styles from "../restaurants-page/restaurant-page.module.css";
-// export const RestaurantsPage = () => {
-//   return (
-//     <div>
-//       <RestaurantTabContainer />
-//       <Outlet />
-//     </div>
-//   );
-// };
 
 export const RestaurantsPage = ({ title }) => {
   return (
