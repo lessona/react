@@ -9,5 +9,5 @@ export const RestaurantTabContainer = ({ id }) => {
     return;
   }
 
-  return <TabLink title={restaurant.name + "aaa"} to={id} />;
+  return <TabLink title={restaurant.name} to={id} />;
 };
