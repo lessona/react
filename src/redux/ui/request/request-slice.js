@@ -33,3 +33,4 @@ export const requestSlice = createSlice({
         }
       ),
 });
+export const { selectRequestStatusById } = requestSlice.selectors;

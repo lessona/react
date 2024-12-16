@@ -26,4 +26,4 @@ export const reviewsSlice = createSlice({
 
 // export const { selectReviewsIds, selectReviewById } = reviewsSlice.selectors;
 export const { selectById: selectReviewById, selectIds: selectReviewsIds } =
-  entityAdapter.getSelectors((state) => state.codecs);
+  entityAdapter.getSelectors((state) => state.reviews);
