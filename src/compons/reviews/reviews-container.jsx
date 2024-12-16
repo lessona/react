@@ -2,12 +2,32 @@ import { useSelector } from "react-redux";
 import { selectRestaurantById } from "../../redux/entities/restaurants/restaurants-slice";
 
 import { Reviews } from "./reviews";
+import {
+  REQUEST_PENDING_STATUS,
+  REQUEST_REJECTED_STATUS,
+} from "../../redux/ui/request/constants";
+import { useRequest } from "../../redux/hooks/use-request";
+import { getReviewsByRestaurantId } from "../../redux/entities/reviews/get-reviews-by-restaurant-jd";
+import { getUsers } from "../../redux/entities/users/get-users";
 
 export const ReviewsContainer = ({ restaurantId }) => {
   const restaurant = useSelector((state) =>
     selectRestaurantById(state, restaurantId)
   );
-
+  const getReviewsStatus = useRequest(getReviewsByRestaurantId, restaurantId);
+  const getUsersStatus = useRequest(getUsers);
+  const isLoading =
+    getReviewsStatus === REQUEST_PENDING_STATUS ||
+    getUsersStatus === REQUEST_PENDING_STATUS;
+  if (isLoading) {
+    return "...loading reviews";
+  }
+  if (getReviewsStatus === REQUEST_REJECTED_STATUS) {
+    return "error reviews";
+  }
+  if (getUsersStatus === REQUEST_REJECTED_STATUS) {
+    return "error users";
+  }
   if (!restaurant?.reviews) {
     return null;
   }

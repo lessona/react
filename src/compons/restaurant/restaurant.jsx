@@ -12,7 +12,7 @@ export const Restaurant = ({ restaurant }) => {
   }
   return (
     <section>
-      <Text type="h2">{name} bbb </Text>
+      <Text type="h2">{name}</Text>
       {auth.isAuthorized && <RestaurantCounter id={restaurant.id} />}
       <TabLink to="reviews" title="Reviews" />
       <TabLink to="menu" title="Menu" />
