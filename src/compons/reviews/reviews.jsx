@@ -1,6 +1,5 @@
 import { useAuth } from "../../autocontext/use-auth";
 import { ReviewForm } from "../review-form/review-form";
-import { Review } from "../review/review";
 import { ReviewContainer } from "../review/review-container";
 import { Text } from "../text/text";
 import styles from "../ul/ul.module.css";
