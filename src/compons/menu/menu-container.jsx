@@ -10,7 +10,7 @@ export const MenuContainer = ({ restaurantId }) => {
   );
   const getCodecsStatus = useRequest(getMenuByRestaurantId, restaurantId);
   if (getCodecsStatus === REQUEST_PENDING_STATUS) {
-    return "...loading";
+    return "...loading menu";
   }
   if (!restaurant?.menu) {
     return null;

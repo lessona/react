@@ -1,4 +1,5 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
+import { selectReviewsIds } from "./reviews-slice";
 export const getReviewsByRestaurantId = createAsyncThunk(
   "reviews/getReviewsByRestaurantId",
   async (restaurantId, { rejectWithValue }) => {
@@ -11,5 +12,6 @@ export const getReviewsByRestaurantId = createAsyncThunk(
       return;
     }
     return result;
-  }
+  },
+ 
 );
