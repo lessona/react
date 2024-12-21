@@ -7,14 +7,27 @@ import {
   REQUEST_PENDING_STATUS,
   REQUEST_REJECTED_STATUS,
 } from "../../redux/ui/request/constants";
+import { useGetRestaurantsQuery } from "../../redux/services/api";
 
 export const RestaurantContainer = ({ id }) => {
-  const requestStatus = useRequest(getRestaurant, id);
-  const restaurant = useSelector((state) => selectRestaurantById(state, id));
-  if (requestStatus === REQUEST_PENDING_STATUS) {
+  // const requestStatus = useRequest(getRestaurant, id);
+  // const restaurant = useSelector((state) => selectRestaurantById(state, id));
+  const {
+    data: restaurant,
+    isLoading,
+    isError,
+  } = useGetRestaurantsQuery(undefined, {
+    selectFromResult: (result) => ({
+      ...result,
+      data: result?.data?.find(({ id: restaurantId }) => restaurantId === id),
+    }),
+  });
+  // if (requestStatus === REQUEST_PENDING_STATUS) {
+  if (isLoading) {
     return "loading restaurant..";
   }
-  if (requestStatus === REQUEST_REJECTED_STATUS) {
+  // if (requestStatus === REQUEST_REJECTED_STATUS) {
+  if (isError) {
     return "error restaurant";
   }
   if (!restaurant) {
@@ -25,7 +38,7 @@ export const RestaurantContainer = ({ id }) => {
     <Restaurant
       restaurant={restaurant}
       reviews={restaurant.reviews}
-      codecs={restaurant.codecs}
+      menu={restaurant.menu}
       id={id}
     />
   );

@@ -4,7 +4,8 @@ import { usersSlice } from "./entities/users/users-slice";
 import { restaurantsSlice } from "./entities/restaurants/restaurants-slice";
 import { menuSlice } from "./entities/menu/menu-slice";
 import { cartSlice } from "./ui/cart/cart-slice";
-import { requestSlice } from "./ui/request/request-slice";
+// import { requestSlice } from "./ui/request/request-slice";
+import { apiSlice } from "./services/api";
 export const store = configureStore({
   reducer: {
     [restaurantsSlice.name]: restaurantsSlice.reducer,
@@ -12,6 +13,9 @@ export const store = configureStore({
     [usersSlice.name]: usersSlice.reducer,
     [menuSlice.name]: menuSlice.reducer,
     [cartSlice.name]: cartSlice.reducer,
-    [requestSlice.name]: requestSlice.reducer,
-  },
+    // [requestSlice.name]: requestSlice.reducer,
+    [apiSlice.reducerPath]: apiSlice.reducer, 
+    },
+  middleware: (getDefaultMiddlewares) =>
+    getDefaultMiddlewares().concat(apiSlice.middleware),
 });

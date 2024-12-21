@@ -8,18 +8,25 @@ import {
   REQUEST_PENDING_STATUS,
   REQUEST_REJECTED_STATUS,
 } from "../../redux/ui/request/constants";
+import { useGetRestaurantsQuery } from "../../redux/services/api";
 export const RestaurantsTabsContainer = () => {
-  const restaurantsIds = useSelector(selectRestaurantsIds);
-  const requestStatus = useRequest(getRestaurants);
-  if (requestStatus === REQUEST_PENDING_STATUS) {
+  // const restaurantsIds = useSelector(selectRestaurantsIds);
+
+  const { data, isLoading, isError } = useGetRestaurantsQuery();
+  // const requestStatus = useRequest(getRestaurants);
+  //if (requestStatus === REQUEST_PENDING_STATUS) {
+  if (isLoading) {
     return "loading ...";
   }
-  if (requestStatus === REQUEST_REJECTED_STATUS) {
+  //if (requestStatus === REQUEST_REJECTED_STATUS) {
+  if (isError) {
     return "error";
   }
 
-  if (!restaurantsIds.length) {
+  //if (!restaurantsIds.length) {
+  if (!data.length) {
     return null;
   }
-  return <RestaurantsTabs restaurantsIds={restaurantsIds} />;
+  //return <RestaurantsTabs restaurantsIds={restaurantsIds} />;
+  return <RestaurantsTabs restaurants={data} />;
 };

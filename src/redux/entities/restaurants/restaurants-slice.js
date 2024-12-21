@@ -8,7 +8,7 @@ export const restaurantsSlice = createSlice({
   selectors: {
     selectRestaurantsIds: (state) => state.ids,
     selectRestaurantById: (state, id) => state.entities[id],
-    selectHeadphonesRequestStatus: (state) => state.requestStatus,
+    selectRestaurantsRequestStatus: (state) => state.requestStatus,
   },
   extraReducers: (builder) =>
     builder.addCase(getRestaurants.fulfilled, (state, { payload }) => {
@@ -19,6 +19,6 @@ export const restaurantsSlice = createSlice({
 export const {
    selectRestaurantById, 
   selectRestaurantsIds,
-  selectHeadphonesRequestStatus, 
+  selectRestaurantsRequestStatus, 
 } =
 restaurantsSlice.selectors;
