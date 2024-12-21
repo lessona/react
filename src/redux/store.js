@@ -8,10 +8,10 @@ import { cartSlice } from "./ui/cart/cart-slice";
 import { apiSlice } from "./services/api";
 export const store = configureStore({
   reducer: {
-    [restaurantsSlice.name]: restaurantsSlice.reducer,
-    [reviewsSlice.name]: reviewsSlice.reducer,
-    [usersSlice.name]: usersSlice.reducer,
-    [menuSlice.name]: menuSlice.reducer,
+    // [restaurantsSlice.name]: restaurantsSlice.reducer,
+    // [reviewsSlice.name]: reviewsSlice.reducer,
+    // [usersSlice.name]: usersSlice.reducer,
+    // [menuSlice.name]: menuSlice.reducer,
     [cartSlice.name]: cartSlice.reducer,
     // [requestSlice.name]: requestSlice.reducer,
     [apiSlice.reducerPath]: apiSlice.reducer, 

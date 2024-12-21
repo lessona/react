@@ -13,7 +13,7 @@ import styles from "./review-form.module.css";
 //     decrementRating,
 //     clear,
 //   } = useForm();
-export const ReviewForm = ({ onSubmit }) => {
+export const ReviewForm = ({ onSubmit, onSubmitEdit }) => {
   const { form, setText, incrementRating, decrementRating, clear } = useForm();
   // const { name, address, text, rating } = form;
   const { text, rating } = form;
@@ -56,7 +56,10 @@ export const ReviewForm = ({ onSubmit }) => {
       </div>
       <Button onClick={clear}>Clear</Button>
       <Button onClick={() => onSubmit({ text, rating, user: "UserR" })}>
-        submit
+        submit add
+      </Button>
+      <Button onClick={() => onSubmitEdit({ text, rating, user: "UserR" })}>
+        submit edit
       </Button>
     </form>
   );

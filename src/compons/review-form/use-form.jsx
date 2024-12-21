@@ -33,8 +33,12 @@ const reducer = (state, { type, payload }) => {
   }
 };
 
-export const useForm = () => {
-  const [form, dispatch] = useReducer(reducer, DEFAULT_FORM_VALUE);
+export const useForm = (text, rating) => {
+  const [form, dispatch] = useReducer(reducer, {
+    ...DEFAULT_FORM_VALUE,
+    text,
+    rating,
+  });
 
   const setName = (name) => {
     dispatch({ type: SET_NAME_ACTION, payload: name });

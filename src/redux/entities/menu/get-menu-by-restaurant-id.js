@@ -4,7 +4,7 @@ export const getMenuByRestaurantId = createAsyncThunk(
   "menu/getMenuByRestaurantId",
   async (restaurantId, { rejectWithValue }) => {
     const response = await fetch(
-      `http://localhost:3001/api/dishes?estaurantId=${restaurantId}`
+      `http://localhost:3001/api/dishes?restaurantId=${restaurantId}`
     );
     const result = await response.json();
     if (!result.length) {

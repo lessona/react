@@ -11,6 +11,7 @@ import { getReviewsByRestaurantId } from "../../redux/entities/reviews/get-revie
 import { getUsers } from "../../redux/entities/users/get-users";
 import {
   useAddReviewMutation,
+  useEditReviewMutation,
   useGetReviewsByRestaurantIdQuery,
   useGetUsersQuery,
 } from "../../redux/services/api";
@@ -39,6 +40,15 @@ export const ReviewsContainer = ({ restaurantId }) => {
     },
     [addReview, restaurantId]
   );
+
+  const [editReview] = useEditReviewMutation();
+
+  const handleEditReview = useCallback(
+    (reviewId, review) => {
+      editReview({ reviewId, review });
+    },
+    [editReview]
+  );
   // if (isLoading) {
   if (isGetReviewsFetching || isAddReviewFetching) {
     return "...loading reviews";
@@ -55,5 +65,11 @@ export const ReviewsContainer = ({ restaurantId }) => {
   }
 
   // return <Reviews reviewsIds={restaurant.reviews} />;
-  return <Reviews reviews={data} onAddReview={handleAddReview} />;
+  return (
+    <Reviews
+      reviews={data}
+      onAddReview={handleAddReview}
+      onEditReview={handleEditReview}
+    />
+  );
 };

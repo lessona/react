@@ -16,14 +16,18 @@ export const apiSlice = createApi({
     }),
     getReviewsByRestaurantId: builder.query({
       query: (restaurantId) => `/reviews?restaurantId=${restaurantId}`,
-      providesTags: (restaurantId) => [{ type: "Reviews", restaurantId }],
+    //   providesTags: (restaurantId) => [{ type: "Reviews", restaurantId }],
+    providesTags: () => {
+        return [{ type: "Reviews" }];
+      },
+    // providesTags: (...result) => [{ type: "Reviews", id: result[2] }],
     }),
     getMenuByRestaurantId: builder.query({
       query: (restaurantId) => `/dishes?restaurantId=${restaurantId}`,
     }),
-    getDishes: builder.query({
-        query: () => "/dishes",
-      }),
+    // getDishes: builder.query({
+    //     query: () => "/dishes",
+    //   }),
       getDishById: builder.query({
         query: (dishId) => `/dishes?dishId=${dishId}`,
       }), 
@@ -33,8 +37,27 @@ export const apiSlice = createApi({
         method: "POST",
         body: review,
       }),
-      invalidatesTags: ({ restaurantId }) => [{ type: "Reviews", restaurantId }],
+    //   invalidatesTags: ({ restaurantId }) => [{ type: "Reviews", restaurantId }],
+    invalidatesTags: () => {
+        return [{ type: "Reviews" }];
+          },
+        // invalidatesTags: (...result) => [
+        //     { type: "Reviews", restaurantId: result[2].restaurantId },
+        //   ],  
     }),
+    editReview: builder.mutation({
+        query: ({ reviewId, review }) => ({
+          url: `/review/${reviewId}`,
+          method: "PATCH",
+          body: review,
+        }),
+        invalidatesTags: () => {
+            return [{ type: "Reviews" }];
+              },
+        // invalidatesTags: (...result) => [
+        //   { type: "Reviews", reviewId: result[2].reviewId },
+        // ],
+      }),
   }),
 });
 export const {
@@ -42,8 +65,9 @@ export const {
   useGetUsersQuery,
   useGetReviewsByRestaurantIdQuery,
   useGetMenuByRestaurantIdQuery,
-  useGetDishesQuery, 
+//   useGetDishesQuery, 
   useGetDishByIdQuery, 
   useGetRestaurantByIdQuery,
   useAddReviewMutation,
+  useEditReviewMutation, 
 } = apiSlice;
