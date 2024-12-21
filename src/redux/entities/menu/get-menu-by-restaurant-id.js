@@ -13,9 +13,4 @@ export const getMenuByRestaurantId = createAsyncThunk(
     }
     return result;
   },
-      {
-        condition: (_, { getState }) => {
-          return selectDishesIds(getState()).length === 0;
-        },
-      }
 );
