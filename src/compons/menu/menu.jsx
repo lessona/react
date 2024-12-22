@@ -1,5 +1,5 @@
 import { MenuItem } from "../menuI-item/menu-item";
-import { MenuItemContainer } from "../menuI-item/menu-item-container";
+
 import { Text } from "../text/text";
 
 export const Menu = ({ menu }) => {

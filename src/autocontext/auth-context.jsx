@@ -8,12 +8,11 @@ export const AuthContextProvider = ({ children }) => {
     setAuth((prev) => {
       return prev.isAuthorized
         ? { isAuthorized: false }
-        : { isAuthorized: true, name: "User" };
-      // {
-      //   isAuthorized: true,
-      //   name: "Sam",
-      //   id: "dfb982e9-b432-4b7d-aec6-7f6ff2e6af54",
-      // };
+        : {
+            isAuthorized: true,
+            name: "Sam",
+            id: "dfb982e9-b432-4b7d-aec6-7f6ff2e6af54",
+          };
     });
   };
 
