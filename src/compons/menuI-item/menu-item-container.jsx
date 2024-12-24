@@ -1,20 +1,14 @@
-import { useSelector } from "react-redux";
-
 import { MenuItem } from "./menu-item";
-import { selectDishById } from "../../redux/entities/menu/menu-slice";
-import { useRequest } from "../../redux/hooks/use-request";
-import { getDish } from "../../redux/entities/menu/get-menu-item";
-import { REQUEST_REJECTED_STATUS } from "../../redux/ui/request/constants";
+import { useGetDishByIdQuery } from "../../redux/services/api";
 
 export const MenuItemContainer = ({ id }) => {
-  const requestStatus = useRequest(getDish, id);
-  const dish = useSelector((state) => selectDishById(state, id));
+  const { data: dish, isLoading, isError } = useGetDishByIdQuery(id);
 
-  if (requestStatus === REQUEST_REJECTED_STATUS) {
-    return "loading";
+  if (isLoading) {
+    return "loading dish";
   }
 
-  if (requestStatus === REQUEST_REJECTED_STATUS) {
+  if (isError) {
     return "error dish";
   }
   if (!dish) {

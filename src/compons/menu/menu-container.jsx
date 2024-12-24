@@ -1,20 +1,24 @@
-import { useSelector } from "react-redux";
-import { selectRestaurantById } from "../../redux/entities/restaurants/restaurants-slice";
 import { Menu } from "./menu";
-import { getMenuByRestaurantId } from "../../redux/entities/menu/get-menu-by-restaurant-id";
-import { useRequest } from "../../redux/hooks/use-request";
-import { REQUEST_PENDING_STATUS } from "../../redux/ui/request/constants";
+
+import { useGetMenuByRestaurantIdQuery } from "../../redux/services/api";
 export const MenuContainer = ({ restaurantId }) => {
-  const restaurant = useSelector((state) =>
-    selectRestaurantById(state, restaurantId)
-  );
-  const getCodecsStatus = useRequest(getMenuByRestaurantId, restaurantId);
-  if (getCodecsStatus === REQUEST_PENDING_STATUS) {
+  const {
+    data: menu,
+    isLoading,
+    isError,
+  } = useGetMenuByRestaurantIdQuery(restaurantId);
+
+  if (isLoading) {
     return "...loading menu";
   }
-  if (!restaurant?.menu) {
+
+  if (isError) {
+    return "...error menu";
+  }
+
+  if (!menu.length) {
     return null;
   }
 
-  return Boolean(restaurant.menu.length) && <Menu menu={restaurant.menu} />;
+  return <Menu menu={menu} />;
 };
