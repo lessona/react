@@ -1,3 +1,4 @@
+"use client";
 import { Layout } from "./compons/layout/layout";
 import "./App.css";
 import { ThemeContextProvider } from "./compons/theme-context/theme-context";
@@ -15,8 +16,8 @@ import { RestaurantMenuPage } from "./compons/pages/restaurant-menu-page";
 import { RestaurantReviewsPage } from "./compons/pages/restaurant-reviews-page";
 import { HomePage } from "./compons/pages/home-page";
 import { DishPage } from "./compons/pages/dish-page";
-import { RestaurantsPage } from "./compons/pages/restaurants-page";
-import { RestaurantPage } from "./compons/pages/restaurant-page";
+import { RestaurantsLayout } from "./compons/pages/restaurants-layout";
+import { RestaurantLayout } from "./compons/pages/restaurant-layout";
 
 const router = createBrowserRouter([
   {
@@ -27,16 +28,12 @@ const router = createBrowserRouter([
 
       {
         path: "restaurants",
-        element: <RestaurantsPage />,
+        element: <RestaurantsLayout />,
         children: [
           {
             path: ":restaurantId",
-            element: <RestaurantPage />,
+            element: <RestaurantLayout />,
             children: [
-              {
-                index: true,
-                element: <Navigate to="menu" replace />,
-              },
               { path: "reviews", element: <RestaurantReviewsPage /> },
               { path: "menu", element: <RestaurantMenuPage /> },
             ],
@@ -51,7 +48,7 @@ const router = createBrowserRouter([
   },
 ]);
 
-export const App = () => {
+const App = () => {
   return (
     <Provider store={store}>
       <ThemeContextProvider>
@@ -62,3 +59,4 @@ export const App = () => {
     </Provider>
   );
 };
+export default App;
