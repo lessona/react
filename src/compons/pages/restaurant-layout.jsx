@@ -1,4 +1,3 @@
-// import { Outlet, useParams } from "react-router-dom";
 import { RestaurantContainer } from "../restaurant/restaurant-container";
 
 export const RestaurantLayout = async ({ params, children }) => {
@@ -6,7 +5,6 @@ export const RestaurantLayout = async ({ params, children }) => {
   return (
     <div>
       <RestaurantContainer id={restaurantId} />
-      {/* <Outlet /> */}
       {children}
     </div>
   );
