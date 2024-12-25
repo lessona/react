@@ -14,8 +14,10 @@ export const Restaurant = ({ restaurant }) => {
     <section>
       <Text type="h2">{name}</Text>
       {auth.isAuthorized && <RestaurantCounter id={restaurant.id} />}
-      <TabLink to="reviews" title="Reviews" />
-      <TabLink to="menu" title="Menu" />
+      <TabLink href={`/restaurants/${restaurant.id}/reviews`} title="Reviews" />
+      <TabLink href={`/restaurants/${restaurant.id}/menu`} title="Menu" />
+      {/* <TabLink to="reviews" title="Reviews" />
+      <TabLink to="menu" title="Menu" /> */}
     </section>
   );
 };

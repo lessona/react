@@ -1,3 +1,4 @@
+"use client";
 import { useGetDishByIdQuery } from "../../redux/services/api";
 import { MenuItem } from "../menuI-item/menu-item";
 

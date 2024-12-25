@@ -1,5 +1,4 @@
 "use client";
-// import { Outlet } from "react-router-dom";
 import { useAuth } from "../../autocontext/use-auth";
 import { Cart } from "../cart/cart";
 import { Footer } from "../footer/footer";

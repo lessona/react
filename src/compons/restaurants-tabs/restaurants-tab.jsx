@@ -7,7 +7,7 @@ export const RestaurantsTabs = ({ restaurants }) => {
       <h3>Choose restaurant </h3>
 
       {restaurants.map(({ name, id }) => (
-        <TabLink title={name} href={`/headphones/${id}`} key={id} />
+        <TabLink title={name} href={`/restaurants/${id}`} key={id} />
       ))}
     </div>
   );

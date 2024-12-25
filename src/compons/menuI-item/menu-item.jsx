@@ -1,10 +1,11 @@
-import { NavLink } from "react-router-dom";
+"use client";
+import Link from "next/link";
 import { DishCounter } from "../count/dishCount";
 
 export const MenuItem = ({ name, id }) => {
   return (
     <div>
-      <NavLink to={`/dish/${id}`}>{name}</NavLink>
+      <Link href={`/dish/${id}`}>{name}</Link>
       {<DishCounter id={id} />}
     </div>
   );

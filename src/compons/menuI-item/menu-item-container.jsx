@@ -1,6 +1,6 @@
+"use client";
 import { MenuItem } from "./menu-item";
 import { useGetDishByIdQuery } from "../../redux/services/api";
-
 export const MenuItemContainer = ({ id }) => {
   const { data: dish, isLoading, isError } = useGetDishByIdQuery(id);
 
