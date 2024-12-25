@@ -12,7 +12,6 @@ export const Layout = ({ children }) => {
     <div>
       <ProgressBar viewVariant="colored" />
       <Header />
-      {/* <Outlet /> */}
       {children}
       {isAuthorized && <Cart />}
       <Footer />

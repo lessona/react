@@ -16,8 +16,6 @@ export const Restaurant = ({ restaurant }) => {
       {auth.isAuthorized && <RestaurantCounter id={restaurant.id} />}
       <TabLink href={`/restaurants/${restaurant.id}/reviews`} title="Reviews" />
       <TabLink href={`/restaurants/${restaurant.id}/menu`} title="Menu" />
-      {/* <TabLink to="reviews" title="Reviews" />
-      <TabLink to="menu" title="Menu" /> */}
     </section>
   );
 };
