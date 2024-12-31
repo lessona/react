@@ -1,3 +1,4 @@
+"use client";
 import { Restaurant } from "./restaurant";
 
 import { useGetRestaurantsQuery } from "../../redux/services/api";

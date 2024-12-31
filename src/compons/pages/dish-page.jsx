@@ -1,11 +1,12 @@
-import { useParams } from "react-router-dom";
+"use client";
 
-import { MenuItemContainer } from "../menuI-item/menu-item-container.jsx";
 import { useAuth } from "../../autocontext/use-auth.jsx";
+import { MenuItemContainer } from "../menu-item/menu-item-container.jsx";
 
+import { useParams } from "next/navigation";
 export const DishPage = () => {
   const { id } = useParams();
-  const { auth } = useAuth();
 
+  const { auth } = useAuth();
   return <MenuItemContainer id={id} isAuthenticated={auth.isAuthenticated} />;
 };

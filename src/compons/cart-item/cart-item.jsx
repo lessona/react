@@ -1,5 +1,6 @@
+"use client";
 import { useGetDishByIdQuery } from "../../redux/services/api";
-import { MenuItem } from "../menuI-item/menu-item";
+import { MenuItem } from "../menu-item/menu-item";
 
 export const CartItem = ({ id }) => {
   const { data: dish, isLoading, isError } = useGetDishByIdQuery(id);

@@ -1,3 +1,4 @@
+"use client";
 import { TabLink } from "../tab-link/tab-link";
 
 export const RestaurantsTabs = ({ restaurants }) => {
@@ -6,7 +7,7 @@ export const RestaurantsTabs = ({ restaurants }) => {
       <h3>Choose restaurant </h3>
 
       {restaurants.map(({ name, id }) => (
-        <TabLink title={name} to={id} key={id} />
+        <TabLink title={name} href={`/restaurants/${id}`} key={id} />
       ))}
     </div>
   );

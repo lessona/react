@@ -1,4 +1,5 @@
-import { MenuItem } from "../menuI-item/menu-item";
+"use client";
+import { MenuItem } from "../menu-item/menu-item";
 
 import { Text } from "../text/text";
 
