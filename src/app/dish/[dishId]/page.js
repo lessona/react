@@ -1,5 +1,5 @@
 
-import { MenuItemContainer } from "../../../compons/menuI-item/menu-item-container";
+import { MenuItemContainer } from "../../../compons/menu-item/menu-item-container";
 
 
 export default MenuItemContainer;
